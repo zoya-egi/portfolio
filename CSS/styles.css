@@ -1,8 +1,59 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&family=Rock+Salt&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Figtree:ital,wght@0,300..900;1,300..900&family=Mr+Dafoe&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+.mainNav {
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 1%;
+    margin-right: 1%;
+    margin-top: -1em;
+}
+
+#logo {
+    font-family: "East Sea Dokdo";
+    text-decoration: underline;
+    font-weight: 400;
+    font-size: 64pt;
+    color: #2F3737;
+}
+
+.navLinks {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+}
+
+/* Style the links inside the navigation bar */
+.navLinks a {
+    font-family: "Figtree", sans-serif;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 16px;
+    color: #2F3737;
+    text-decoration: none;
+    gap: 2em;
+}
+
+/* Change the color of links on hover */
+.navLinks a:hover {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+}
+
+/* Add a color to the active/current link */
+.navLinks a.active {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+}
 
 h1 {
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 500;
+    font-family: "Playfair Display SC", serif;
+    font-weight: 400;
     font-size: 175%;
-    color: pink;
+    color: #2F3737;
+}
+
+.hero {
+    margin-left: 15%;
+    margin-right: 15%;
 }
