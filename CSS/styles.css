@@ -1,20 +1,35 @@
-@import url('https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Figtree:ital,wght@0,300..900;1,300..900&family=Mr+Dafoe&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Figtree:ital,wght@0,300..900;1,300..900&family=Gaegu&family=Mr+Dafoe&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Rock+3D&display=swap');
 
 .mainNav {
     overflow: hidden;
     display: flex;
     justify-content: space-between;
-    margin-left: 1%;
-    margin-right: 1%;
-    margin-top: -1em;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+    padding-top: 1em;
+    padding-bottom: .5em;
+    position: fixed;           /* Fixes nav to the top */
+    top: 0; 
+    left: 0;
+    right: 0;
+    z-index: 1000;  
+    background-color: white;
 }
 
 #logo {
-    font-family: "East Sea Dokdo";
-    text-decoration: underline;
+    font-family: "Rock 3D", system-ui;
+    text-decoration: none;
     font-weight: 400;
-    font-size: 64pt;
+    font-size: 32pt;
     color: #2F3737;
+    text-underline-offset: 0.1em;
+    transition: color 0.2s ease;
+}
+
+#logo:hover {
+    color: #384D48;
+    font-weight: 500;
+    text-shadow: 0 0 20px rgba(190, 214, 208, 0.5);
 }
 
 .navLinks {
@@ -38,22 +53,81 @@
 .navLinks a:hover {
     text-decoration: underline;
     text-underline-offset: 0.2em;
+    color: #384D48;
+    font-weight: 400;
 }
 
-/* Add a color to the active/current link */
+/* Add a color to the active/current link */ 
 .navLinks a.active {
     text-decoration: underline;
     text-underline-offset: 0.2em;
+    color: #384D48;
+    font-weight: 400;
 }
 
-h1 {
-    font-family: "Playfair Display SC", serif;
-    font-weight: 400;
-    font-size: 175%;
-    color: #2F3737;
+.landingPage {
+    margin-left: -1em;
+    margin-right: -1em;
+    margin-top: -1%;
+    background-image: linear-gradient(180deg, white, #EAEDE8);
+    border-radius: 8%;
+    height: 675px;
 }
 
 .hero {
-    margin-left: 15%;
-    margin-right: 15%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 10%;
+    padding-bottom: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* "Playfair Display SC", serif; */
+.heroH1 {
+    margin-top: 1.5em;
+    font-family: "Figtree", sans-serif;
+    font-weight: 400;
+    font-size: 68px;
+    color: #2F3737;
+}
+.hero h2 {
+    font-family: "Figtree", sans-serif;
+    font-weight: 400;
+    font-size: 52px;
+    color: #2F3737;
+    margin-top: -0.25em;
+}
+
+#heroImg {
+    width: 300px; 
+    height: auto;
+    border-radius: 5%;
+    margin-top: 3em;
+    margin-right: 4em;
+    box-shadow: 0 0 20px rgba(56, 77, 72, 0.5);
+}
+
+.heroH1 .heroHello, .heroH1 .heroWorld, .hero h2, #heroImg {
+    opacity: 0;
+    display: inline-block;
+    animation: wordFade 0.5s ease forwards;
+}
+
+.heroH1 .heroHello { animation-delay: 0.2s; }
+.heroH1 .heroWorld { animation-delay: 0.8s; }
+.hero h2 {animation-delay: 1.4s;}
+#heroImg {animation-delay: 1.4s;}
+
+@keyframes wordFade {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/*Interview Qs*/
+.interviewQs h1 {
+    margin-top: 1.5em;
+    font-family: "Figtree", sans-serif;
+    font-weight: 400;
+    font-size: 68px;
+    color: #2F3737;
 }
