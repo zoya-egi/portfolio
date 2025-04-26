@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Figtree:ital,wght@0,300..900;1,300..900&family=Gaegu&family=Mr+Dafoe&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Rock+3D&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Figtree:ital,wght@0,300..900;1,300..900&family=Rock+3D&display=swap');
 
 .mainNav {
     overflow: hidden;
@@ -8,11 +8,12 @@
     padding-right: 2.5%;
     padding-top: 1em;
     padding-bottom: .5em;
-    position: fixed;           /* Fixes nav to the top */
-    top: 0; 
+    position: fixed;
+    /* Fixes nav to the top */
+    top: 0;
     left: 0;
     right: 0;
-    z-index: 1000;  
+    z-index: 1000;
     background-color: white;
 }
 
@@ -29,7 +30,7 @@
 #logo:hover {
     color: #384D48;
     font-weight: 500;
-    text-shadow: 0 0 20px rgba(190, 214, 208, 0.5);
+    text-shadow: 0 0 20px rgba(172, 183, 164, 0.75);
 }
 
 .navLinks {
@@ -47,22 +48,32 @@
     color: #2F3737;
     text-decoration: none;
     gap: 2em;
+    transition: color 0.3s ease;
+    position: relative;
 }
 
-/* Change the color of links on hover */
-.navLinks a:hover {
-    text-decoration: underline;
-    text-underline-offset: 0.2em;
-    color: #384D48;
-    font-weight: 400;
+.navLinks a:hover,
+.navLinks a:active {
+    color:#839376;
 }
 
-/* Add a color to the active/current link */ 
-.navLinks a.active {
-    text-decoration: underline;
-    text-underline-offset: 0.2em;
-    color: #384D48;
-    font-weight: 400;
+.navLinks a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    margin-top: 2em;
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+    background-color: #839376;
+}
+
+.navLinks a:active::after,
+.navLinks a:hover::after {
+    transform: scaleX(1);
 }
 
 .landingPage {
@@ -91,6 +102,7 @@
     font-size: 68px;
     color: #2F3737;
 }
+
 .hero h2 {
     font-family: "Figtree", sans-serif;
     font-weight: 400;
@@ -100,34 +112,110 @@
 }
 
 #heroImg {
-    width: 300px; 
+    width: 300px;
     height: auto;
     border-radius: 5%;
-    margin-top: 3em;
-    margin-right: 4em;
+    margin-top: 4em;
+    margin-right: 6em;
     box-shadow: 0 0 20px rgba(56, 77, 72, 0.5);
 }
 
-.heroH1 .heroHello, .heroH1 .heroWorld, .hero h2, #heroImg {
+.heroH1 .heroHello,
+.heroH1 .heroWorld,
+.hero h2,
+#heroImg {
     opacity: 0;
     display: inline-block;
     animation: wordFade 0.5s ease forwards;
 }
 
-.heroH1 .heroHello { animation-delay: 0.2s; }
-.heroH1 .heroWorld { animation-delay: 0.8s; }
-.hero h2 {animation-delay: 1.4s;}
-#heroImg {animation-delay: 1.4s;}
+.heroH1 .heroHello {
+    animation-delay: 0.2s;
+}
+
+.heroH1 .heroWorld {
+    animation-delay: 0.8s;
+}
+
+.hero h2 {
+    animation-delay: 1.4s;
+}
+
+#heroImg {
+    animation-delay: 1.4s;
+}
 
 @keyframes wordFade {
-  to { opacity: 1; transform: translateY(0); }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /*Interview Qs*/
+.interviewQs {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+
 .interviewQs h1 {
     margin-top: 1.5em;
     font-family: "Figtree", sans-serif;
     font-weight: 400;
     font-size: 68px;
     color: #2F3737;
+}
+
+
+/* about me page */
+.aboutLayout {
+    margin-top: 8%;
+    display: flex;
+}
+
+.aboutNav {
+    width: 15%;
+    margin-top: 25%;
+    gap: .5em;
+    position: sticky;
+    display: flex;
+    flex-direction: column;
+    padding-left: 2.5%;
+}
+
+.aboutNav h1 {
+    font-family: "Figtree", sans-serif;
+    font-weight: 600;
+    color: #384D48;
+    font-size: 16px;
+}
+
+.aboutNav a {
+    font-family: "Figtree", sans-serif;
+    font-weight: 300;
+    color: #2F3737;
+    font-size: 26px;
+    align-self: start;
+    width: auto;
+    cursor: pointer;
+}
+
+.aboutNav a:hover, .aboutNav a:active {
+    color:#839376;
+}
+
+.aboutContent {
+    background-color: #EAEDE8;
+    border-radius: 5%;
+    width: 90%;
+}
+
+#aboutHeroH1 {
+    text-transform: uppercase;
+    color: #384D48;
+    font-family: "Figtree", sans-serif;
+    font-weight: 700;
+    font-size: 68pt;
+    margin-left: 5%;
 }
